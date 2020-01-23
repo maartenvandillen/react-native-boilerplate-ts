@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "Boilerplate-tvOS.app"
-               BlueprintName = "Boilerplate-tvOS"
-               ReferencedContainer = "container:Boilerplate.xcodeproj">
+               BuildableName = "europetrack-tvOS.app"
+               BlueprintName = "europetrack-tvOS"
+               ReferencedContainer = "container:europetrack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "Boilerplate-tvOSTests.xctest"
-               BlueprintName = "Boilerplate-tvOSTests"
-               ReferencedContainer = "container:Boilerplate.xcodeproj">
+               BuildableName = "europetrack-tvOSTests.xctest"
+               BlueprintName = "europetrack-tvOSTests"
+               ReferencedContainer = "container:europetrack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "Boilerplate-tvOSTests.xctest"
-               BlueprintName = "Boilerplate-tvOSTests"
-               ReferencedContainer = "container:Boilerplate.xcodeproj">
+               BuildableName = "europetrack-tvOSTests.xctest"
+               BlueprintName = "europetrack-tvOSTests"
+               ReferencedContainer = "container:europetrack.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Boilerplate-tvOS.app"
-            BlueprintName = "Boilerplate-tvOS"
-            ReferencedContainer = "container:Boilerplate.xcodeproj">
+            BuildableName = "europetrack-tvOS.app"
+            BlueprintName = "europetrack-tvOS"
+            ReferencedContainer = "container:europetrack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Boilerplate-tvOS.app"
-            BlueprintName = "Boilerplate-tvOS"
-            ReferencedContainer = "container:Boilerplate.xcodeproj">
+            BuildableName = "europetrack-tvOS.app"
+            BlueprintName = "europetrack-tvOS"
+            ReferencedContainer = "container:europetrack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "Boilerplate-tvOS.app"
-            BlueprintName = "Boilerplate-tvOS"
-            ReferencedContainer = "container:Boilerplate.xcodeproj">
+            BuildableName = "europetrack-tvOS.app"
+            BlueprintName = "europetrack-tvOS"
+            ReferencedContainer = "container:europetrack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

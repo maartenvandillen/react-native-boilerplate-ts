@@ -1,4 +1,4 @@
-package com.boilerplate;
+package com.europetrack;
 
 import android.app.Application;
 
