@@ -2,8 +2,10 @@ import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
+// Screens
 import ExampleScreen from 'App/Containers/Example/ExampleScreen'
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
+import MapScreen from 'App/Containers/MapScreen/MapScreen';
 
 const StackNavigator = createStackNavigator(
   {
@@ -17,7 +19,7 @@ const StackNavigator = createStackNavigator(
 )
 
 const TabNavigator = createBottomTabNavigator({
-  Map: ExampleScreen,
+  Map: MapScreen,
   Devices: StackNavigator,
 })
 
