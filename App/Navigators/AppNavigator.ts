@@ -1,10 +1,12 @@
-import { createAppContainer } from 'react-navigation'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import i18next from 'i18next';
 
 // Screens
 import ExampleScreen from 'App/Containers/Example/ExampleScreen'
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
+import LoginScreen from 'App/Containers/LoginScreen/LoginScreen';
 import MapScreen from 'App/Containers/MapScreen/MapScreen';
 
 const TabMap = createStackNavigator(
@@ -13,7 +15,10 @@ const TabMap = createStackNavigator(
   },
   {
     initialRouteName: 'MapScreen',
-    headerMode: 'none',
+    navigationOptions: ({ navigation, navigationOptions }) => ({
+      tabBarLabel: i18next.t('map:tabTitle')
+    }),
+     // headerMode: 'none',
   }
 )
 
@@ -24,7 +29,10 @@ const TabDevices = createStackNavigator(
   },
   {
     initialRouteName: 'SplashScreen',
-    headerMode: 'none',
+    navigationOptions: ({ navigation, navigationOptions }) => ({
+      tabBarLabel: i18next.t('devices:tabTitle')
+    }),
+    // headerMode: 'none',
   }
 )
 
@@ -33,4 +41,19 @@ const TabNavigator = createBottomTabNavigator({
   Devices: TabDevices,
 })
 
-export default createAppContainer(TabNavigator)
+const AppStack = TabNavigator
+const AuthStack = createStackNavigator({ Login: LoginScreen })
+
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      App: AppStack,
+      Auth: AuthStack,
+    },
+    {
+      initialRouteName: 'Auth',
+    }
+  )
+);
+
+// export default createAppContainer(TabNavigator)

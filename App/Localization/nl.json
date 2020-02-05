@@ -2,7 +2,19 @@
   "common": {
     "appTitle": "App Titel"
   },
+  "login": {
+    "screenTitle": "Inloggen",
+    "username": "Gebruikersnaam",
+    "password": "Wachtwoord",
+    "btnLogin": "Inloggen"
+  },
+  "map": {
+    "tabTitle": "Kaart"
+  },
+  "devices": {
+    "tabTitle": "Voertuigen"
+  },
   "home": {
-    "screenTitle": "Hoofdscherm translated"
+    "screenTitle": "Hoofdscherm"
   }
 }

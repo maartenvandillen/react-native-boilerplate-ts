@@ -2,7 +2,19 @@
   "common": {
     "appTitle": "App Title"
   },
+  "login": {
+    "screenTitle": "Login",
+    "username": "Username",
+    "password": "Password",
+    "btnLogin": "Login"
+  },
+  "map": {
+    "tabTitle": "Map"
+  },
+  "devices": {
+    "tabTitle": "Devices"
+  },
   "home": {
-    "screenTitle": "Home screen translated"
+    "screenTitle": "Home screen"
   }
 }
