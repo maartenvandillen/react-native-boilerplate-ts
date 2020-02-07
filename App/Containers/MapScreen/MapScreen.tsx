@@ -23,7 +23,7 @@ const MapScreen: FunctionComponent<MapScreenBaseProps> = ({
   const { t } = useTranslation();
   
   useEffect(() => {
-    fetchUser()
+    // fetchUser()
   }, [fetchUser])
 
   return (

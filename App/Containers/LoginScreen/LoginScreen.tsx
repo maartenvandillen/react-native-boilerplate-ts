@@ -1,22 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, FunctionComponent } from 'react'
 import { Text, View, TextInput, Button } from 'react-native'
 import styles from './LoginScreenStyle'
 import { useTranslation } from 'react-i18next';
-import { NavigationStackScreenComponent, NavigationStackScreenProps } from 'react-navigation-stack'
+import { useDispatch } from 'react-redux';
+import AuthActions from 'App/Stores/Auth/Actions'
 
-interface Props extends NavigationStackScreenProps {
+interface Props {
 }
 
-export const LoginScreen: NavigationStackScreenComponent<Props> = ({
-  navigation
+const LoginScreen: FunctionComponent<Props> = ({
 }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   
   useEffect(() => {
   }, [])
 
   const onLoginPress = () => {
-    navigation.navigate("App")
+    dispatch(AuthActions.login("u", "p"))
   }
 
   return (
@@ -29,9 +30,5 @@ export const LoginScreen: NavigationStackScreenComponent<Props> = ({
     </View>
   )
 }
-
-LoginScreen.navigationOptions = {
-  title: "TODO",
-};
 
 export default LoginScreen
