@@ -1,47 +1,33 @@
-import axios from 'axios'
-import { is, curryN, gte } from 'ramda'
+import { create } from 'apisauce'
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/users/'
+const API_KEY_NAME = ""
 
-const isWithin = curryN(3, (min: number, max: number, value: number) => {
-  const isNumber = is(Number)
-  return isNumber(min) && isNumber(max) && isNumber(value) && gte(value, min) && gte(max, value)
-})
-const in200s = isWithin(200, 299)
-
-const apiClient = axios.create({
-  /**
-   * Import the config from the App/Config/index.ts file
-   */
+const api = create({
   baseURL: BASE_URL,
-  headers: {
+  headers: { 
     Accept: 'application/json',
-    'Content-Type': 'application/json',
+    // 'Content-Type': 'application/x-www-form-urlencoded',
   },
-  timeout: 3000,
+  timeout: 10000,
 })
 
-function login(userName: string, password: string) {
-  // Simulate an error 50% of the time just for testing purposes
-  // if (Math.random() > 0.5) {
-  //   return new Promise(function(resolve) {
-  //     resolve(null)
-  //   })
-  // }
-
-  let number = Math.floor(Math.random() / 0.1) + 1
-
-  return apiClient.get(number.toString()).then((response) => {
-    if (in200s(response.status)) {
-      return response.data
-    } else {
-      return new Promise(function(resolve) {
-        resolve(null)
-      })
-    }
-  })
+let key: string = ""
+function setKey(value: string) {
+  key = value
 }
 
-export const api = {
+function login(userName: string, password: string) {
+  const data = {
+    username: userName,
+    password
+  }
+  
+  return api.post(`key/name/${API_KEY_NAME}`, data)
+}
+
+export default {
+  setKey,
+  
   login,
 }
