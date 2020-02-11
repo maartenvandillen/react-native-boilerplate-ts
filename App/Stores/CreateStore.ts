@@ -1,28 +1,29 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { persistReducer, persistStore } from 'redux-persist'
+import { persistReducer, persistStore, createMigrate } from 'redux-persist'
 import logger from 'redux-logger'
-
-/**
- * This import defaults to localStorage for web and AsyncStorage for react-native.
- *
- * Keep in mind this storage *is not secure*. Do not use it to store sensitive information
- * (like API tokens, private and sensitive data, etc.).
- *
- * If you need to store sensitive information, use redux-persist-sensitive-storage.
- * @see https://github.com/CodingZeal/redux-persist-sensitive-storage
- */
-import storage from 'redux-persist/lib/storage'
+import AsyncStorage from '@react-native-community/async-storage'
 
 const persistConfig = {
   key: 'root',
-  storage: storage,
-  /**
-   * Blacklist state that we do not need/want to persist
-   */
+  storage: AsyncStorage,
   blacklist: [
-    // 'auth',
   ],
+  whitelist: ['settings'],
+  version: 0,
+  migrate: createMigrate({
+    1: (state) => {
+      console.log("==============> MIGRATION state", state)
+      const migratedState = {  //Immutable({
+        settings: {
+          // ...state.settings,
+          // settingTimerEnabled: true,
+        },
+      }   //)
+      console.log("==============> MIGRATION migratedState", migratedState)
+      return migratedState
+    },
+  }, { debug: true }),
 }
 
 export default (rootReducer: any, rootSaga: any) => {
